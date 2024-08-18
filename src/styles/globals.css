@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/*************************/
+/* components */
+/*************************/
+
+
+/* ham-burger btn */
+
+.ham-btn {
+  @apply w-7 h-[25px] relative grid place-content-center;
+}
+
+.ham-btn span {
+  @apply w-7 h-[3px] bg-black rounded-md transition-all
+}
+
+.ham-btn::before,
+.ham-btn::after {
+  content: '';
+  @apply absolute w-7 h-[3px] bg-black rounded-md transition-all;
+}
+
+.ham-btn::before {
+  @apply top-0 left-0
+}
+
+.ham-btn::after {
+  @apply bottom-0 left-0
+}
+
+.ham-btn.active span {
+  @apply bg-transparent
+}
+
+.ham-btn.active::before {
+  @apply rotate-45 top-[14px] w-8
+}
+
+.ham-btn.active::after {
+  @apply -rotate-45 bottom-2  w-8
+}
