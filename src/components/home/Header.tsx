@@ -9,7 +9,7 @@ const Header = () => {
   const [blogMenuActive, setBlogMenuActive] = useState(false);
 
   return (
-    <header className="flex items-center justify-between lg:px-12 xl:px-32 px-4 lg:py-1 sticky top-0 border-b-2 border-gray-100">
+    <header className="flex items-center justify-between lg:px-12 xl:px-32 px-4 lg:py-1 sticky top-0 z-20 bg-white bg-opacity-20 backdrop-blur-xl">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Header = () => {
         </button>
         <nav
           className={
-            `fixed lg:static right-[5vw] text-lg ${menuActive ? "top-32" : "-top-[100vh]"} flex w-[90vw] max-w-96 lg:w-auto lg:max-w-fit flex-col lg:flex-row gap-3 lg:gap-12 rounded-lg border-2 lg:border-0 px-6 py-6 transition-all`
+            `fixed lg:static bg-white lg:bg-transparent right-[5vw] text-lg ${menuActive ? "top-32" : "-top-[100vh]"} flex w-[90vw] max-w-96 lg:w-auto lg:max-w-fit flex-col lg:flex-row gap-3 lg:gap-12 rounded-lg border-2 lg:border-0 px-6 py-6 transition-all`
           }
         >
           <Link href="/about" className="font-semibold hover:text-primary transition">About</Link>
@@ -72,7 +72,7 @@ const Header = () => {
               </svg>
             </button>
             <div
-              className={`lg:absolute lg:top-6 lg:right-0 lg:w-52 lg:gap-4 flex flex-col gap-3 rounded-lg bg-gray-50 transition-all ${blogMenuActive ? "h-auto p-6 mt-4 overflow-auto" : "h-0 overflow-hidden"}`}
+              className={`lg:absolute lg:top-10 lg:-right-2 lg:w-52 lg:gap-4 flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:shadow-lg ${blogMenuActive ? "p-6 mt-4 lg:border-2 lg:border-gray-200" : "max-h-0 px-6 overflow-hidden"}`}
             >
               <Link href="/blogs/internship" className="font-semibold hover:text-primary transition">Internship Blogs</Link>
               <Link href="/blogs/placement" className="font-semibold hover:text-primary transition">Placement Blogs</Link>

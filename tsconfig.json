@@ -37,6 +37,6 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts"
-  ],
+, "src/components/home/Footer.tsx"  ],
   "exclude": ["node_modules"]
 }

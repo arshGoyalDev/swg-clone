@@ -9,8 +9,9 @@ export default {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
       },
       colors: {
-        primary: "#028d93"
-      }
+        primary: "#028d93",
+        secondary: "#122736"
+      },
     },
   },
   plugins: [],
