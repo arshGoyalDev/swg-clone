@@ -1,22 +1,30 @@
 "use client";
 
-import Image from "next/image";
-import InitiativeCard from "./InitiativeCard";
 import { useEffect, useState } from "react";
+
+import { InitiativeCard } from "../cards";
 
 const Initiatives = () => {
   const [activeCard, setActiveCard] = useState(1);
-
+  const [cardOrder, setCardOrder] = useState("up");
 
   useEffect(() => {
     setTimeout(() => {
-      if (activeCard !== 1) {
-        setActiveCard(activeCard - 1);
-      } else{
-        setActiveCard(activeCard + 1)
+      if (cardOrder === "up") {
+        if (activeCard !== 3) {
+          setActiveCard(activeCard + 1);
+        } else {
+          setCardOrder("down");
+        }
+      } else {
+        if (activeCard !== 1) {
+          setActiveCard(activeCard - 1);
+        } else {
+          setCardOrder("up");
+        }
       }
-    }, 3000)
-  }, [activeCard])
+    }, 3000);
+  }, [activeCard, cardOrder]);
 
   const cardData: {
     id: number;
@@ -43,7 +51,7 @@ const Initiatives = () => {
   return (
     <section className="grid place-content-center gap-20 px-4 py-20 lg:px-12 xl:px-32">
       <div className="grid flex-col place-content-center gap-8 text-center">
-        <h2 className="text-secondary text-6xl font-semibold">
+        <h2 className="text-6xl font-semibold text-secondary">
           Student Welfare Group
         </h2>
         <p className="max-w-[1000px] text-lg">
@@ -58,17 +66,16 @@ const Initiatives = () => {
       </div>
 
       <div className="relative grid place-content-center gap-20 text-center">
-        <h2 className="text-secondary text-5xl font-semibold">
+        <h2 className="text-5xl font-semibold text-secondary">
           SWG Initiatives
         </h2>
 
         <div>
-          <div className="flex">
+          <div className="relative flex">
             {cardData.map((card) => {
               return (
                 <InitiativeCard
                   key={card.id}
-                  id={card.id}
                   image={card.img}
                   info={card.info}
                   active={activeCard === card.id ? true : false}
@@ -79,7 +86,7 @@ const Initiatives = () => {
 
           <div className="mt-8 flex justify-center gap-5">
             <button
-              className="bg-primary grid h-12 w-12 place-content-center rounded-full"
+              className="grid h-12 w-12 place-content-center rounded-full bg-primary"
               onClick={() => {
                 if (activeCard !== 1) {
                   setActiveCard(activeCard - 1);
@@ -105,7 +112,7 @@ const Initiatives = () => {
             </button>
 
             <button
-              className="bg-primary grid h-12 w-12 place-content-center rounded-full"
+              className="grid h-12 w-12 place-content-center rounded-full bg-primary"
               onClick={() => {
                 if (activeCard !== 3) {
                   setActiveCard(activeCard + 1);

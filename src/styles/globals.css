@@ -43,3 +43,8 @@
 .ham-btn.active::after {
   @apply -rotate-45 bottom-2  w-8
 }
+
+.animate {
+  @apply animate-bounce;
+  animation-duration: 3s;
+}
