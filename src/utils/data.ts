@@ -146,4 +146,46 @@ const teamData: {
   ],
 };
 
-export { initiativesData, blogsData, teamData };
+// resources data
+
+const resourcesData: {
+  title: string;
+  content: string;
+  bgImage: string;
+  link: string;
+}[] = [
+  {
+    title: "1st Year Resources",
+    content:
+      "From books to notes to previous year papers, all things acads for 1st year.",
+    bgImage: "https://swgiitkgp.org/assets/images/1st-year.jpg",
+    link: "https://drive.google.com/drive/folders/1cZjU_l2NUIuxnRofN30DqavQZ1tHr4Wy",
+  },
+  {
+    title: "2nd Year Resources",
+    content: "Branch wise study material for 2nd year.",
+    bgImage: "https://swgiitkgp.org/assets/images/2nd-year.jpg",
+    link: "https://swgiitkgp.org/2nd_year_material",
+  },
+  {
+    title: "Academic Information",
+    content:
+      "All important information about scholarships and more for students.",
+    bgImage: "https://swgiitkgp.org/assets/images/academic.jpg",
+    link: "http://iitkgp.ac.in/for-students",
+  },
+  {
+    title: "Fundae Docs",
+    content: "All the tools to crack problems you will face in KGP.",
+    bgImage: "https://swgiitkgp.org/assets/images/fundae.jpg",
+    link: "https://drive.google.com/drive/folders/1kHOCcFcWkncHaAPZtzOCHUDn4aKQ84KV?usp=sharing",
+  },
+  {
+    title: "GMAT Resources",
+    content: "Guide to Applying for Overseas Education",
+    bgImage: "https://swgiitkgp.org/assets/images/gmat.png",
+    link: "https://drive.google.com/drive/folders/1YZnPLwAwuY8cEg9-HnVdvmku6VJnDCdl",
+  },
+];
+
+export { initiativesData, blogsData, teamData, resourcesData };

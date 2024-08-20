@@ -11,7 +11,7 @@ import { Header, Footer } from "~/components";
 
 const metadata: Metadata = {
   title: "SWG",
-  description: "Student's Welfare Group (SWG) Home PAge",
+  description: "Student's Welfare Group (SWG) Home Page",
 };
 
 const HomePage = () => {

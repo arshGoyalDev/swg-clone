@@ -1,6 +1,6 @@
 import InitiativeCard from "./InitiativeCard";
 import BlogCard from "./BlogCard";
-import TeamHeadCard from "./TeamHeadCard";
-import TeamAdvisorCard from "./TeamAdvisorCard";
+import TeamCard from "./TeamCard";
+import ResourceCard from "./ResourceCard";
 
-export { InitiativeCard, BlogCard, TeamHeadCard, TeamAdvisorCard };
+export { InitiativeCard, BlogCard, TeamCard, ResourceCard };

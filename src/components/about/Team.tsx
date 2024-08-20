@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 import { teamData } from "~/utils";
-import { TeamAdvisorCard, TeamHeadCard } from "../cards";
+
+import { TeamCard } from "../cards";
 
 const Team = () => {
-  const [team, setTeam] = useState("advisors");
+  const [team, setTeam] = useState("heads");
 
   useEffect(() => {
     console.log(team);
@@ -42,7 +43,7 @@ const Team = () => {
           <>
             {teamData.heads.map((head) => {
               return (
-                <TeamHeadCard
+                <TeamCard
                   key={head.name}
                   name={head.name}
                   role={head.role}
@@ -56,7 +57,7 @@ const Team = () => {
           <>
             {teamData.advisors.map((advisor) => {
               return (
-                <TeamAdvisorCard
+                <TeamCard
                   key={advisor.name}
                   name={advisor.name}
                   profilePic={advisor.profilePic}

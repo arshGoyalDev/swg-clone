@@ -5,7 +5,7 @@ import { Team } from "~/components/about";
 
 const metadata: Metadata = {
   title: "SWG | About",
-  description: "Student's Welfare Group (SWG) Home PAge",
+  description: "Student's Welfare Group (SWG) Home Page",
 };
 
 const AboutPage = () => {

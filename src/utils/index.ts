@@ -1,3 +1,3 @@
-import { initiativesData, blogsData, teamData } from "./data";
+import { initiativesData, blogsData, teamData, resourcesData } from "./data";
 
-export { initiativesData, blogsData, teamData };
+export { initiativesData, blogsData, teamData, resourcesData };
