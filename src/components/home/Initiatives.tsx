@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 
 import { InitiativeCard } from "../cards";
 
+import { initiativesData } from "~/utils";
+
 const Initiatives = () => {
   const [activeCard, setActiveCard] = useState(1);
   const [cardOrder, setCardOrder] = useState("up");
@@ -26,31 +28,9 @@ const Initiatives = () => {
     }, 3000);
   }, [activeCard, cardOrder]);
 
-  const cardData: {
-    id: number;
-    img: string;
-    info: string;
-  }[] = [
-    {
-      id: 1,
-      img: "https://swgiitkgp.org/assets/images/smp.jpg",
-      info: "Connects students with a senior who is their guide though the college",
-    },
-    {
-      id: 2,
-      img: "https://swgiitkgp.org/assets/images/pds.jpg",
-      info: "Sessions where PDS mentors not just clear concepts and doubts but provide practice as well",
-    },
-    {
-      id: 3,
-      img: "https://swgiitkgp.org/assets/images/depc.jpg",
-      info: "All one can need for DepC (except for the report of working hard) is here!",
-    },
-  ];
-
   return (
     <section className="grid place-content-center gap-20 px-4 py-20 lg:px-12 xl:px-32">
-      <div className="grid flex-col place-content-center gap-8 text-center">
+      <div className="grid place-content-center gap-8 text-center">
         <h2 className="text-6xl font-semibold text-secondary">
           Student Welfare Group
         </h2>
@@ -72,13 +52,13 @@ const Initiatives = () => {
 
         <div>
           <div className="relative flex">
-            {cardData.map((card) => {
+            {initiativesData.map((initiative) => {
               return (
                 <InitiativeCard
-                  key={card.id}
-                  image={card.img}
-                  info={card.info}
-                  active={activeCard === card.id ? true : false}
+                  key={initiative.id}
+                  image={initiative.img}
+                  info={initiative.info}
+                  active={activeCard === initiative.id ? true : false}
                 />
               );
             })}

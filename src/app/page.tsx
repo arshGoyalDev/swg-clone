@@ -1,12 +1,13 @@
 import { type Metadata } from "next";
+
 import {
-  Header,
   HeroSection,
   Initiatives,
   FeaturedBlogs,
   FAQs,
-  Footer,
 } from "~/components/home";
+
+import { Header, Footer } from "~/components";
 
 const metadata: Metadata = {
   title: "SWG",

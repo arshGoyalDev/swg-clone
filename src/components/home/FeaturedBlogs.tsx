@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import { BlogCard } from "../cards";
 
+import { blogsData } from "~/utils";
+
 const FeaturedBlogs = () => {
   const [activeCard, setActiveCard] = useState(1);
 
@@ -16,29 +18,6 @@ const FeaturedBlogs = () => {
       }
     }, 4000);
   }, [activeCard]);
-
-  const blogsData = [
-    {
-      id: 1,
-      profilePic:
-        "https://miro.medium.com/v2/resize:fit:1100/0*9Rdu49655XKu31-u",
-      name: "Atal Ashutosh Agarwal",
-      type: "Adieu KGP",
-      content:
-        "KGP is a great time for exploration. Be extremely selfish about taking out the most value for yourself out of this experience. You should not worry about rejections, interns or placements. In the long run these things do not matter. You should focus on creating your own brand. Always believe in living a big life (larger than yourself).",
-      link: "/",
-    },
-    {
-      id: 2,
-      profilePic:
-        "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*8GG4amXg9ZEnYqyELnDmOQ.jpeg",
-      name: "Daksh Varshney",
-      type: "Foresight Internship",
-      content:
-        "You must be proficient in DSA. There are multiple resources for preparing it like Interviewbit, GeeksForGeeks, Leetcode, and CSES. Keep giving contests on platforms like Codeforces and Codechef to practice solving questions in a time-bound environment. Also, keep a good habit of calculating time complexity and space complexity while solving a problem.",
-      link: "/",
-    },
-  ];
 
   return (
     <section className="grid place-content-center gap-20 bg-primary bg-opacity-20 px-4 py-20 lg:px-12 xl:px-32">

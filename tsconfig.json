@@ -37,6 +37,6 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts"
-, "src/components/home/Footer.tsx", "src/components/cards/BlogCard.tsx"  ],
+, "src/components/Footer.tsx", "src/components/cards/BlogCard.tsx"  ],
   "exclude": ["node_modules"]
 }
