@@ -46,26 +46,26 @@ const Header = () => {
         >
           <Link
             href="/about"
-            className="font-semibold transition hover:text-primary"
+            className="font-semibold transition hover:text-primary relative nav--link"
           >
             About
           </Link>
           <Link
             href="/events"
-            className="font-semibold transition hover:text-primary"
+            className="font-semibold transition hover:text-primary relative nav--link"
           >
             Events
           </Link>
           <Link
             href="/resources"
-            className="font-semibold transition hover:text-primary"
+            className="font-semibold transition hover:text-primary relative nav--link"
           >
             Resources
           </Link>
           {/* <Link href="/cv-repo" className="font-semibold hover:text-primary transition">CV Repo</Link> */}
           <div className="lg:relative">
             <button
-              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} flex items-center gap-2 transition`}
+              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} flex items-center gap-2 transition relative nav--link`}
               onClick={() => {
                 cvMenuActive
                   ? setCvMenuActive(false)
@@ -133,7 +133,7 @@ const Header = () => {
           </div>
           <div className="lg:relative">
             <button
-              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} flex items-center gap-2 transition`}
+              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} flex items-center gap-2 transition relative nav--link`}
               onClick={() => {
                 blogMenuActive
                   ? setBlogMenuActive(false)

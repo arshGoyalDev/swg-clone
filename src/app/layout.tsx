@@ -1,18 +1,27 @@
 import "~/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import {Rubik} from 'next/font/google';
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
+const rubik = Rubik({ weight: 'variable',
+  subsets: ["latin"],
+  style: ["normal"],
+ })
+
+
+const RootLayout = ({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${rubik.className}`}>
       <body>{children}</body>
     </html>
   );
 }
+
+
+export default RootLayout

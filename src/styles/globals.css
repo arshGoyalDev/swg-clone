@@ -6,6 +6,8 @@
 /* components */
 /*************************/
 
+/* header */
+
 /* ham-burger btn */
 
 .ham-btn {
@@ -47,9 +49,37 @@
   animation-duration: 3s;
 }
 
+/* nav bar */
+
+.nav--link::before {
+  content: '';
+  @apply absolute -bottom-[2px] w-full h-[2px] bg-primary rounded-xl scale-x-0 transition-all origin-left
+}
+
+.nav--link:hover::before {
+  @apply scale-x-100;
+}
+
 /* card */
 
 .card--team:hover .card--team--info,
 .card--resource:hover .card--resource--info {
   @apply top-0 left-0 w-full h-full
+}
+
+/* input[type=radio] */
+
+input[type=radio] {
+  appearance: none;
+  margin: 0;
+  @apply w-8 h-8 rounded-lg border-[2px] border-black flex items-center justify-center
+}
+
+input[type=radio]::before {
+  content: '';
+  @apply w-5 h-5 bg-primary rounded-lg scale-0 transition-all;
+}
+
+input[type=radio]:checked::before {
+  @apply scale-100;
 }
