@@ -1,3 +1,3 @@
 import CvContainer from "./CvContainer";
 
-export {CvContainer}
+export { CvContainer };

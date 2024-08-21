@@ -52,8 +52,8 @@
 /* nav bar */
 
 .nav--link::before {
-  content: '';
-  @apply absolute -bottom-[2px] w-full h-[2px] bg-primary rounded-xl scale-x-0 transition-all origin-left
+  content: "";
+  @apply absolute -bottom-[2px] h-[2px] w-full origin-left scale-x-0 rounded-xl bg-primary bg-opacity-80 transition-all;
 }
 
 .nav--link:hover::before {
@@ -64,22 +64,72 @@
 
 .card--team:hover .card--team--info,
 .card--resource:hover .card--resource--info {
-  @apply top-0 left-0 w-full h-full
+  @apply left-0 top-0 h-full w-full;
 }
 
 /* input[type=radio] */
 
-input[type=radio] {
+input[type="radio"] {
   appearance: none;
   margin: 0;
-  @apply w-8 h-8 rounded-lg border-[2px] border-black flex items-center justify-center
+  @apply flex h-8 w-8 items-center justify-center rounded-lg border-[2px] border-black;
 }
 
-input[type=radio]::before {
-  content: '';
-  @apply w-5 h-5 bg-primary rounded-lg scale-0 transition-all;
+input[type="radio"]::before {
+  content: "";
+  @apply h-5 w-5 scale-0 rounded-lg bg-primary transition-all;
 }
 
-input[type=radio]:checked::before {
+input[type="radio"]:checked::before {
   @apply scale-100;
+}
+
+/* light box */
+
+.animate--light-box--entry {
+  animation-name: enter-animation;
+  animation-duration: 1s;
+}
+
+.animate--light-box--exit {
+  animation-name: exit-animation;
+  animation-duration: 1s;
+}
+
+@keyframes enter-animation {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translate3d(-400px, 0, 0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: translate3d(30px, 0, 0);
+  }
+  100% {
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes exit-animation {
+  0% {
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: translate3d(-30px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translate3d(400px, 0, 0);
+  }
 }

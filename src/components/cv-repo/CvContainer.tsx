@@ -3,14 +3,24 @@
 import { useEffect, useState } from "react";
 
 import { cvData } from "~/utils";
+
 import { CvCard } from "../cards";
+import LightBox from "./LightBox";
 
 const CvContainer = () => {
+  const [cvLightBox, setCvLightBox] = useState({
+    cvLink: "",
+    name: "",
+  });
   const [cvType, setCvType] = useState("internships");
 
   useEffect(() => {
-    console.log(cvType);
-  }, [cvType]);
+    if (cvLightBox.cvLink === "") {
+      document.body.style = "overflow: auto;";
+    } else {
+      document.body.style = "overflow: hidden;";
+    }
+  }, [cvLightBox]);
 
   return (
     <div className="mt-10">
@@ -58,6 +68,7 @@ const CvContainer = () => {
                   cvLink={data.cvLink}
                   name={data.name}
                   companyName={data.companyName}
+                  setCvLightBox={setCvLightBox}
                 />
               );
             })
@@ -68,10 +79,15 @@ const CvContainer = () => {
                   cvLink={data.cvLink}
                   name={data.name}
                   companyName={data.companyName}
+                  setCvLightBox={setCvLightBox}
                 />
               );
             })}
       </div>
+
+      {cvLightBox.cvLink !== "" && (
+        <LightBox cvLightBox={cvLightBox} setCvLightBox={setCvLightBox} />
+      )}
     </div>
   );
 };
