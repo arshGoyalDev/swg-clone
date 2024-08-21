@@ -7,9 +7,10 @@ import Link from "next/link";
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [blogMenuActive, setBlogMenuActive] = useState(false);
+  const [cvMenuActive, setCvMenuActive] = useState(false);
 
   return (
-    <header className="flex items-center justify-between lg:px-12 xl:px-32 px-4 lg:py-1 sticky top-0 z-20 bg-white bg-opacity-20 backdrop-blur-xl">
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-white bg-opacity-20 px-4 backdrop-blur-xl lg:px-12 lg:py-1 xl:px-32">
       <Link href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,18 +42,104 @@ const Header = () => {
           <span></span>
         </button>
         <nav
-          className={
-            `fixed lg:static bg-white lg:bg-transparent right-[5vw] text-lg ${menuActive ? "top-32" : "-top-[100vh]"} flex w-[90vw] max-w-96 lg:w-auto lg:max-w-fit flex-col lg:flex-row gap-3 lg:gap-12 rounded-lg border-2 lg:border-0 px-6 py-6 transition-all`
-          }
+          className={`fixed right-[5vw] bg-white text-lg lg:static lg:bg-transparent ${menuActive ? "top-24" : "-top-[100vh]"} flex w-[90vw] max-w-96 flex-col gap-3 rounded-lg border-2 px-6 py-6 transition-all lg:w-auto lg:max-w-fit lg:flex-row lg:gap-12 lg:border-0`}
         >
-          <Link href="/about" className="font-semibold hover:text-primary transition">About</Link>
-          <Link href="/events" className="font-semibold hover:text-primary transition">Events</Link>
-          <Link href="/resources" className="font-semibold hover:text-primary transition">Resources</Link>
-          <Link href="/cv-repo" className="font-semibold hover:text-primary transition">CV Repo</Link>
+          <Link
+            href="/about"
+            className="font-semibold transition hover:text-primary"
+          >
+            About
+          </Link>
+          <Link
+            href="/events"
+            className="font-semibold transition hover:text-primary"
+          >
+            Events
+          </Link>
+          <Link
+            href="/resources"
+            className="font-semibold transition hover:text-primary"
+          >
+            Resources
+          </Link>
+          {/* <Link href="/cv-repo" className="font-semibold hover:text-primary transition">CV Repo</Link> */}
           <div className="lg:relative">
-            <button className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} transition flex items-center gap-2`} onClick={() => {
-              blogMenuActive ? setBlogMenuActive(false) : setBlogMenuActive(true);
-            }}>
+            <button
+              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} flex items-center gap-2 transition`}
+              onClick={() => {
+                cvMenuActive
+                  ? setCvMenuActive(false)
+                  : setCvMenuActive(true);
+              }}
+            >
+              Cv Repo
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.9201 8.94995L13.4001 15.47C12.6301 16.24 11.3701 16.24 10.6001 15.47L4.08008 8.94995"
+                  stroke={cvMenuActive ? "#028d93" : "#000"}
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <div
+              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:absolute lg:-right-2 lg:top-10 lg:w-52 lg:gap-4 lg:shadow-lg ${cvMenuActive ? "mt-4 p-6 lg:border-2 lg:border-gray-200" : "max-h-0 overflow-hidden px-6"}`}
+            >
+              <Link
+                href="/cv-repo/software"
+                className="font-semibold transition hover:text-primary"
+              >
+                Software
+              </Link>
+              <Link
+                href="/cv-repo/consultant"
+                className="font-semibold transition hover:text-primary"
+              >
+                Consultant
+              </Link>
+              <Link
+                href="/cv-repo/data"
+                className="font-semibold transition hover:text-primary"
+              >
+                Data
+              </Link>
+              <Link
+                href="/cv-repo/product"
+                className="font-semibold transition hover:text-primary"
+              >
+                Product
+              </Link>
+              <Link
+                href="/cv-repo/quant"
+                className="font-semibold transition hover:text-primary"
+              >
+                Quant
+              </Link>
+              <Link
+                href="/cv-repo/finance"
+                className="font-semibold transition hover:text-primary"
+              >
+                Finance
+              </Link>
+            </div>
+          </div>
+          <div className="lg:relative">
+            <button
+              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} flex items-center gap-2 transition`}
+              onClick={() => {
+                blogMenuActive
+                  ? setBlogMenuActive(false)
+                  : setBlogMenuActive(true);
+              }}
+            >
               Blog
               <svg
                 width="16"
@@ -72,12 +159,30 @@ const Header = () => {
               </svg>
             </button>
             <div
-              className={`lg:absolute lg:top-10 lg:-right-2 lg:w-52 lg:gap-4 flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:shadow-lg ${blogMenuActive ? "p-6 mt-4 lg:border-2 lg:border-gray-200" : "max-h-0 px-6 overflow-hidden"}`}
+              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:absolute lg:-right-2 lg:top-10 lg:w-52 lg:gap-4 lg:shadow-lg ${blogMenuActive ? "mt-4 p-6 lg:border-2 lg:border-gray-200" : "max-h-0 overflow-hidden px-6"}`}
             >
-              <Link href="/blogs/internship" className="font-semibold hover:text-primary transition">Internship Blogs</Link>
-              <Link href="/blogs/placement" className="font-semibold hover:text-primary transition">Placement Blogs</Link>
-              <Link href="/blogs/adieu-kgp" className="font-semibold hover:text-primary transition">Adieu Kgp</Link>
-              <Link href="/blogs/know-your-department" className="font-semibold hover:text-primary transition">
+              <Link
+                href="/blogs/internship"
+                className="font-semibold transition hover:text-primary"
+              >
+                Internship Blogs
+              </Link>
+              <Link
+                href="/blogs/placement"
+                className="font-semibold transition hover:text-primary"
+              >
+                Placement Blogs
+              </Link>
+              <Link
+                href="/blogs/adieu-kgp"
+                className="font-semibold transition hover:text-primary"
+              >
+                Adieu Kgp
+              </Link>
+              <Link
+                href="/blogs/know-your-department"
+                className="font-semibold transition hover:text-primary"
+              >
                 Know Your Department
               </Link>
             </div>
