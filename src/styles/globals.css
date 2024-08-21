@@ -47,9 +47,9 @@
   animation-duration: 3s;
 }
 
-/* team card */
+/* card */
 
-.team-pic-container {
-  -webkit-clip-path: circle(50% at 50% 50%);
-  clip-path: circle(50% at 50% 50%);
+.card--team:hover .card--team--info,
+.card--resource:hover .card--resource--info {
+  @apply top-0 left-0 w-full h-full
 }
