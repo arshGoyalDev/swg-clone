@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { teamData } from "~/utils";
 
@@ -9,18 +9,14 @@ import { TeamCard } from "../cards";
 const Team = () => {
   const [team, setTeam] = useState("heads");
 
-  useEffect(() => {
-    console.log(team);
-  }, [team]);
-
   return (
     <section className="grid place-content-center gap-10 px-4 pb-32 text-center lg:px-12 xl:px-32 xl:pb-48">
       <h2 className="text-5xl font-semibold">Our Team</h2>
 
       <div className="flex items-center justify-center gap-4 pb-10">
-        <div className="items-centre flex justify-center rounded-xl bg-gray-100 relative">
+        <div className="items-centre relative flex justify-center rounded-xl bg-gray-100">
           <button
-            className={`md:px-10 w-32 md:w-40 py-4 text-lg font-semibold z-[15] ${team === "heads" && "text-white bg-primary"} transition-all rounded-xl`}
+            className={`z-[15] w-32 py-4 text-lg font-semibold md:w-40 md:px-10 ${team === "heads" && "bg-primary text-white"} rounded-xl transition-all`}
             onClick={() => {
               setTeam("heads");
             }}
@@ -28,7 +24,7 @@ const Team = () => {
             Heads
           </button>
           <button
-            className={`md:px-10 w-32 md:w-40 py-4 text-lg font-semibold z-[15] ${team === "advisors" && "text-white bg-primary"} transition-all rounded-xl`}
+            className={`z-[15] w-32 py-4 text-lg font-semibold md:w-40 md:px-10 ${team === "advisors" && "bg-primary text-white"} rounded-xl transition-all`}
             onClick={() => {
               setTeam("advisors");
             }}
