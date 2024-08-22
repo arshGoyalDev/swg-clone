@@ -34,12 +34,12 @@ const LightBox = ({
               cvLink: "",
               name: "",
             });
-          }, 950);
+          }, 900);
   }}
       ></div>
 
       <div
-        className={`w-[90vw] rounded-xl sm:max-h-[90vh] sm:w-[50%] sm:max-w-[660px] ${animate === "entry" && "animate--light-box--entry"} ${animate === "exit" && "animate--light-box--exit"} z-50 overflow-auto`}
+        className={`w-[90vw] rounded-xl lg:max-h-[90vh] lg:w-[50%] lg:max-w-[660px] ${animate === "entry" && "animate--light-box--entry"} ${animate === "exit" && "animate--light-box--exit"} z-50 overflow-auto`}
       >
         <div className="flex items-center justify-between gap-4 border-b-2 border-b-gray-300 bg-white px-4 py-2">
           <h2>{cvLightBox.name}</h2>

@@ -6,6 +6,12 @@
 /* components */
 /*************************/
 
+/* body */
+
+body.overflow--hidden {
+  @apply overflow-hidden;
+}
+
 /* header */
 
 /* ham-burger btn */
@@ -72,16 +78,11 @@
 input[type="radio"] {
   appearance: none;
   margin: 0;
-  @apply flex h-8 w-8 items-center justify-center rounded-lg border-[2px] border-black;
+  @apply flex h-8 w-8 items-center justify-center rounded-lg border-[2px] border-black transition-colors;
 }
 
-input[type="radio"]::before {
-  content: "";
-  @apply h-5 w-5 scale-0 rounded-lg bg-primary transition-all;
-}
-
-input[type="radio"]:checked::before {
-  @apply scale-100;
+input[type="radio"]:checked {
+  @apply border-0 bg-primary;
 }
 
 /* light box */

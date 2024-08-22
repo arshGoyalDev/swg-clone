@@ -16,47 +16,32 @@ const CvContainer = () => {
 
   useEffect(() => {
     if (cvLightBox.cvLink === "") {
-      document.body.style = "overflow: auto;";
+      document.body.classList.remove("overflow--hidden");
     } else {
-      document.body.style = "overflow: hidden;";
+      document.body.classList.add("overflow--hidden");
     }
   }, [cvLightBox]);
 
   return (
     <div className="mt-10">
       <div className="flex items-center justify-center gap-10">
-        <label
-          htmlFor="internships"
-          className="flex cursor-pointer items-center gap-2"
+        <button
+          className={`px-6 py-4 text-lg font-semibold ${cvType === "internships" && "bg-primary text-white"} rounded-xl transition-all`}
+          onClick={() => {
+            setCvType("internships");
+          }}
         >
-          <input
-            type="radio"
-            name="cv-type"
-            id="internships"
-            onChange={(e) => {
-              if (e.target.checked) {
-                setCvType("internships");
-              }
-            }}
-          />
-          <p className="text-xl font-semibold">Internships</p>
-        </label>
-        <label
-          htmlFor="placement"
-          className="flex cursor-pointer items-center gap-2"
+          Internships
+        </button>
+
+        <button
+          className={`px-6 py-4 text-lg font-semibold ${cvType === "placements" && "bg-primary text-white"} rounded-xl transition-all`}
+          onClick={() => {
+            setCvType("placements");
+          }}
         >
-          <input
-            type="radio"
-            name="cv-type"
-            id="placement"
-            onChange={(e) => {
-              if (e.target.checked) {
-                setCvType("placements");
-              }
-            }}
-          />
-          <p className="text-xl font-semibold">Placement</p>
-        </label>
+          Placements
+        </button>
       </div>
 
       <div className="mt-16 flex flex-wrap items-center justify-center gap-16">

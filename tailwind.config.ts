@@ -5,7 +5,7 @@ export default {
   content: ["./src/**/*.tsx"],
   theme: {
     screens: {
-      sm: "400px",
+      sm: "500px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
