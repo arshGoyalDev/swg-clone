@@ -57,53 +57,63 @@ const blogsData: {
 
 const teamData: {
   heads: {
+    id: number;
     name: string;
     role: string;
     profilePic: string;
   }[];
 
   advisors: {
+    id: number;
     name: string;
     profilePic: string;
   }[];
 } = {
   heads: [
     {
+      id: 1,
       name: "Akshat Kapoor",
       role: "Tech Head",
       profilePic: "https://swgiitkgp.org/assets/images/akshat.jpg",
     },
     {
+      id: 2,
       name: "Astitva Srivastava",
       role: "Core Head",
       profilePic: "https://swgiitkgp.org/assets/images/astha.jpg",
     },
     {
+      id: 3,
       name: "Astha Kumari",
       role: "Executive Head",
       profilePic: "https://swgiitkgp.org/assets/images/astitva.jpg",
     },
     {
+      id: 4,
       name: "Bhawesh Kukreja",
       role: "Design Head",
       profilePic: "https://swgiitkgp.org/assets/images/bhawesh.jpg",
     },
     {
+      id: 5,
       name: "Shashank Tiwari",
       role: "Executive Head",
       profilePic: "https://swgiitkgp.org/assets/images/shashank.jpg",
     },
     {
+      id: 6,
       name: "Shivam Bisen",
       role: "Videography Head",
       profilePic: "https://swgiitkgp.org/assets/images/shivam.jpg",
     },
     {
+      id: 7,
       name: "Shravan Barad",
       role: "Core Head",
       profilePic: "https://swgiitkgp.org/assets/images/shravan.jpg",
     },
     {
+      id: 8,
       name: "Vumika Ghosh",
       role: "Pr/Lit Head",
       profilePic: "https://swgiitkgp.org/assets/images/vumika.jpg",
@@ -111,35 +121,48 @@ const teamData: {
   ],
   advisors: [
     {
+      id: 1,
       name: "Anish Behuray",
       profilePic: "https://swgiitkgp.org/assets/images/anish.jpg",
     },
 
     {
+      id: 2,
       name: "Jainish Solanki",
       profilePic: "https://swgiitkgp.org/assets/images/jainish.jpg",
     },
+
     {
+      id: 3,
       name: "JSR Sujit",
       profilePic: "https://swgiitkgp.org/assets/images/sujit.png",
     },
     {
+      id: 4,
       name: "Khushi Agarwal",
       profilePic: "https://swgiitkgp.org/assets/images/khushi.jpg",
     },
     {
+      id: 5,
+
       name: "Priyanshi Khetan",
       profilePic: "https://swgiitkgp.org/assets/images/priyanshi.jpg",
     },
     {
+      id: 6,
+
       name: "Sapharu Veena Nikhita",
       profilePic: "https://swgiitkgp.org/assets/images/nikhita.png",
     },
     {
+      id: 7,
+
       name: "Shubham Singh",
       profilePic: "https://swgiitkgp.org/assets/images/shubham.jpg",
     },
     {
+      id: 8,
+
       name: "Yash Kumar",
       profilePic: "https://swgiitkgp.org/assets/images/yash.jpg",
     },
@@ -149,12 +172,14 @@ const teamData: {
 // resources data
 
 const resourcesData: {
+  id: number;
   title: string;
   content: string;
   bgImage: string;
   link: string;
 }[] = [
   {
+    id: 1,
     title: "1st Year Resources",
     content:
       "From books to notes to previous year papers, all things acads for 1st year.",
@@ -162,12 +187,14 @@ const resourcesData: {
     link: "https://drive.google.com/drive/folders/1cZjU_l2NUIuxnRofN30DqavQZ1tHr4Wy",
   },
   {
+    id: 2,
     title: "2nd Year Resources",
     content: "Branch wise study material for 2nd year.",
     bgImage: "https://swgiitkgp.org/assets/images/2nd-year.jpg",
     link: "https://swgiitkgp.org/2nd_year_material",
   },
   {
+    id: 3,
     title: "Academic Information",
     content:
       "All important information about scholarships and more for students.",
@@ -175,12 +202,14 @@ const resourcesData: {
     link: "http://iitkgp.ac.in/for-students",
   },
   {
+    id: 4,
     title: "Fundae Docs",
     content: "All the tools to crack problems you will face in KGP.",
     bgImage: "https://swgiitkgp.org/assets/images/fundae.jpg",
     link: "https://drive.google.com/drive/folders/1kHOCcFcWkncHaAPZtzOCHUDn4aKQ84KV?usp=sharing",
   },
   {
+    id: 5,
     title: "GMAT Resources",
     content: "Guide to Applying for Overseas Education",
     bgImage: "https://swgiitkgp.org/assets/images/gmat.png",

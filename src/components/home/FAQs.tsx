@@ -1,4 +1,9 @@
+"use client";
+
+import { fadeIn } from "~/utils/animations";
 import Question from "./Question";
+
+import { motion } from "framer-motion";
 
 const FAQs = () => {
   const faqsData: {
@@ -56,19 +61,29 @@ const FAQs = () => {
   ];
 
   return (
-    <section className="grid place-content-center px-4 py-20 pb-40 lg:px-12 xl:px-32">
-      <h2 className="text-secondary text-center text-6xl font-semibold">
+    <motion.section
+      variants={fadeIn("right")}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="grid place-content-center px-4 py-20 pb-40 lg:px-12 xl:px-32"
+    >
+      <h2 className="text-center text-6xl font-semibold text-secondary">
         Frequently Asked Questions
       </h2>
 
       <div className="mt-20 grid gap-5">
         {faqsData.map((faq) => {
           return (
-            <Question key={faq.id} question={faq.question} answer={faq.answer} />
+            <Question
+              key={faq.id}
+              question={faq.question}
+              answer={faq.answer}
+            />
           );
         })}
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default FAQs;

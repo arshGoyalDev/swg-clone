@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { InitiativeCard } from "../cards";
 
 import { initiativesData } from "~/utils";
+import { fadeIn } from "~/utils/animations";
 
 const Initiatives = () => {
   const [activeCard, setActiveCard] = useState(1);
@@ -29,7 +32,13 @@ const Initiatives = () => {
   }, [activeCard, cardOrder]);
 
   return (
-    <section className="grid place-content-center gap-20 px-4 py-20 lg:px-12 xl:px-32">
+    <motion.section
+      variants={fadeIn("right")}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="grid place-content-center gap-20 px-4 py-20 lg:px-12 xl:px-32"
+    >
       <div className="grid place-content-center gap-8 text-center">
         <h2 className="text-6xl font-semibold text-secondary">
           Student Welfare Group
@@ -119,7 +128,7 @@ const Initiatives = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Initiatives;

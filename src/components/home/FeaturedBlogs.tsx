@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 
-import { BlogCard } from "../cards";
+import {motion} from 'framer-motion'
+
+import { BlogCardHome } from "../cards";
 
 import { blogsData } from "~/utils";
+import { fadeIn } from "~/utils/animations";
 
 const FeaturedBlogs = () => {
   const [activeCard, setActiveCard] = useState(1);
@@ -20,7 +23,12 @@ const FeaturedBlogs = () => {
   }, [activeCard]);
 
   return (
-    <section className="grid place-content-center gap-20 bg-primary bg-opacity-20 px-4 py-20 lg:px-12 xl:px-32">
+    <motion.section
+    variants={fadeIn("left")}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.25 }}
+    className="grid place-content-center gap-20 bg-primary bg-opacity-20 px-4 py-20 lg:px-12 xl:px-32">
       <h2 className="text-6xl font-semibold text-secondary">
         Student Welfare Group
       </h2>
@@ -28,7 +36,7 @@ const FeaturedBlogs = () => {
         <div className="max-w-[600px]">
           {blogsData.map((card) => {
             return (
-              <BlogCard
+              <BlogCardHome
                 key={card.id}
                 profilePic={card.profilePic}
                 name={card.name}
@@ -95,7 +103,7 @@ const FeaturedBlogs = () => {
           </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default FeaturedBlogs;

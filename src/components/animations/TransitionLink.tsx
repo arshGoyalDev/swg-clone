@@ -32,7 +32,7 @@ const TransitionLink = ({ children, href, className }: TransitionLinkProps) => {
 
     router.push(href);
 
-    await sleep(600);
+    await sleep(800);
 
     body?.classList.remove("page-transition");
   };

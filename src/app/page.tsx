@@ -7,8 +7,6 @@ import {
   FAQs,
 } from "~/components/home";
 
-import { Header, Footer } from "~/components";
-
 const metadata: Metadata = {
   title: "SWG",
   description: "Student's Welfare Group (SWG) Home Page",
@@ -17,12 +15,10 @@ const metadata: Metadata = {
 const HomePage = () => {
   return (
     <main>
-      <Header />
       <HeroSection />
       <Initiatives />
       <FeaturedBlogs />
       <FAQs />
-      <Footer />
     </main>
   );
 };

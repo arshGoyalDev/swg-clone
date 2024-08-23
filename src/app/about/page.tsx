@@ -1,6 +1,5 @@
 import { type Metadata } from "next";
 
-import { Footer, Header } from "~/components";
 import { Team } from "~/components/about";
 
 const metadata: Metadata = {
@@ -11,9 +10,7 @@ const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <main>
-      <Header />
-
-      <section className="grid place-content-center gap-8 text-center py-20 pb-40 pt-20 lg:pt-32 px-4 lg:px-12 xl:px-32">
+      <section className="grid place-content-center gap-8 px-4 py-20 pb-40 pt-20 text-center lg:px-12 lg:pt-32 xl:px-32">
         <h1 className="text-6xl font-semibold text-secondary">
           Student Welfare Group
         </h1>
@@ -29,9 +26,7 @@ const AboutPage = () => {
         </p>
       </section>
 
-      <Team />    
-
-      <Footer />
+      <Team />
     </main>
   );
 };

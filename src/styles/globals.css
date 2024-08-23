@@ -19,16 +19,12 @@ body {
 }
 
 .page-transition {
-  opacity: 0;
-  background: black;
-  transform: translateY(40px);
-  filter: blur(12px);
+  @apply opacity-0 bg-black translate-y-10 blur-xl;
 }
 
 /* header */
 
 /* ham-burger btn */
-
 
 .ham-btn {
   @apply relative grid h-[25px] w-7 place-content-center;

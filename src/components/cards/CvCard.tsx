@@ -1,18 +1,30 @@
+"use client";
+
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { motion } from "framer-motion";
+
+import { appearIn } from "~/utils/animations";
+
 const CvCard = ({
+  id,
   cvLink,
   name,
   companyName,
   setCvLightBox,
 }: {
+  id: number;
   cvLink: string;
   name: string;
   companyName: string;
   setCvLightBox: any;
 }) => {
   return (
-    <div
+    <motion.div
+      variants={appearIn(0.1*id)}
+      initial={"hidden"}
+      whileInView={"show"}
       className="relative cursor-pointer rounded-xl border-4 border-gray-200 shadow-xl"
       onClick={() => {
         setCvLightBox({
@@ -29,7 +41,7 @@ const CvCard = ({
         <p className="text-lg">{companyName}</p>
         <p className="text-gray-200">{name}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default CvCard;

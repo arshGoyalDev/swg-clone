@@ -45,22 +45,13 @@ const CvContainer = () => {
       </div>
 
       <div className="mt-16 flex flex-wrap items-center justify-center gap-16">
-        {cvType === "placements"
-          ? cvData.software.placements.map((data) => {
+        {cvType === "placements" && (
+          <>
+            {cvData.software.placements.map((data) => {
               return (
                 <CvCard
                   key={data.id}
-                  cvLink={data.cvLink}
-                  name={data.name}
-                  companyName={data.companyName}
-                  setCvLightBox={setCvLightBox}
-                />
-              );
-            })
-          : cvData.software.internships.map((data) => {
-              return (
-                <CvCard
-                  key={data.id}
+                  id={data.id}
                   cvLink={data.cvLink}
                   name={data.name}
                   companyName={data.companyName}
@@ -68,6 +59,24 @@ const CvContainer = () => {
                 />
               );
             })}
+          </>
+        )}
+        {cvType === "internships" && (
+          <>
+            {cvData.software.internships.map((data) => {
+              return (
+                <CvCard
+                  key={data.id}
+                  id={data.id}
+                  cvLink={data.cvLink}
+                  name={data.name}
+                  companyName={data.companyName}
+                  setCvLightBox={setCvLightBox}
+                />
+              );
+            })}
+          </>
+        )}
       </div>
 
       {cvLightBox.cvLink !== "" && (

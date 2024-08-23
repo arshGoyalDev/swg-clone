@@ -2,18 +2,22 @@
 
 import { useEffect, useState } from "react";
 
+import { motion } from "framer-motion";
+
 import Image from "next/image";
+
+import { fadeIn } from "~/utils/animations";
 
 const HeroSection = () => {
   const [currentGroup, setCurrentGroup] = useState(0);
   const [animationOrder, setAnimationOrder] = useState("up");
+  // const [groupChange, setGroupChange] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       if (animationOrder === "up") {
         if (currentGroup !== 2) {
           setCurrentGroup(currentGroup + 1);
-          
         } else {
           setAnimationOrder("down");
         }
@@ -25,7 +29,6 @@ const HeroSection = () => {
         }
       }
     }, 3500);
-
   }, [currentGroup, animationOrder]);
 
   const data: {
@@ -47,7 +50,13 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="grid grid-cols-1 place-content-center overflow-x-hidden py-20 pb-40 pt-20 lg:pt-32">
+    <motion.section
+      variants={fadeIn("up")}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="grid grid-cols-1 place-content-center overflow-x-hidden py-20 pb-40 pt-20 lg:pt-32"
+    >
       <div className="flex flex-col items-center px-4 text-center lg:px-12 xl:px-32">
         <Image
           src="/images/hero-image.png"
@@ -55,12 +64,12 @@ const HeroSection = () => {
           width={120}
           height={120}
         />
-        <h1 className="mt-3 flex flex-col items-center gap-4 font-extralight relative">
+        <h1 className="relative mt-3 flex flex-col items-center gap-4 font-extralight">
           <span className="text-3xl text-gray-700 lg:text-4xl">
             Right there with you in your
           </span>
           <span
-            className={`w-[236px] text-4xl font-semibold lg:w-fit lg:text-6xl animate`}
+            className={`animate w-[236px] text-4xl font-semibold lg:w-fit lg:text-6xl`}
           >
             {currentGroup === 0 && (
               <span className="text-[#db9336]">{data[0]?.title}</span>
@@ -76,7 +85,9 @@ const HeroSection = () => {
       </div>
 
       <div className="mt-32 grid w-full place-content-center lg:mt-52">
-        <div className="relative grid gap-6">
+        <div
+          className="relative grid gap-6"
+        >
           <Image
             src={`/images/${data[currentGroup]?.name}/1.png`}
             alt="1"
@@ -191,7 +202,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default HeroSection;

@@ -40,7 +40,8 @@ const Team = () => {
             {teamData.heads.map((head) => {
               return (
                 <TeamCard
-                  key={head.name}
+                  key={head.id}
+                  id={head.id}
                   name={head.name}
                   role={head.role}
                   profilePic={head.profilePic}
@@ -54,7 +55,8 @@ const Team = () => {
             {teamData.advisors.map((advisor) => {
               return (
                 <TeamCard
-                  key={advisor.name}
+                  key={advisor.id}
+                  id={advisor.id}
                   name={advisor.name}
                   profilePic={advisor.profilePic}
                 />
