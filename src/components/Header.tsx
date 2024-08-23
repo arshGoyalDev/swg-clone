@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import Link from "next/link";
+import { TransitionLink } from "./animations";
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -10,8 +10,8 @@ const Header = () => {
   const [cvMenuActive, setCvMenuActive] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 flex items-center justify-between bg-white bg-opacity-20 px-4 backdrop-blur-xl lg:px-12 lg:py-1 xl:px-32">
-      <Link href="/">
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-white bg-opacity-20 px-4 backdrop-blur-3xl lg:px-12 lg:py-1 xl:px-32">
+      <TransitionLink href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="180"
@@ -30,7 +30,7 @@ const Header = () => {
             d="M119.261 38.358c-.201.328-.41.574-.629.738-.219.146-.492.219-.82.219-.347 0-.738-.146-1.176-.438-.419-.291-.948-.61-1.585-.957-.62-.364-1.358-.692-2.215-.984-.856-.31-1.877-.464-3.062-.464-1.093 0-2.059.136-2.898.41-.82.273-1.512.656-2.077 1.148a4.84 4.84 0 00-1.285 1.75 5.55 5.55 0 00-.41 2.16c0 1.002.264 1.84.793 2.514.528.657 1.221 1.221 2.077 1.695a18.09 18.09 0 002.98 1.258c1.112.346 2.242.72 3.39 1.12 1.167.402 2.306.857 3.417 1.368a11.362 11.362 0 012.953 1.94c.875.785 1.576 1.741 2.105 2.871.529 1.13.793 2.506.793 4.128 0 1.75-.301 3.39-.902 4.921a11.65 11.65 0 01-2.625 4.02c-1.13 1.13-2.533 2.022-4.21 2.678-1.659.656-3.554.984-5.686.984-1.258 0-2.488-.127-3.691-.382a19.433 19.433 0 01-3.417-1.012 17.975 17.975 0 01-3.035-1.64 15.305 15.305 0 01-2.542-2.133l1.859-3.061c.164-.256.373-.456.628-.602.256-.146.538-.219.848-.219.42 0 .884.2 1.394.602.51.383 1.121.81 1.832 1.285.729.455 1.604.884 2.624 1.285 1.021.382 2.242.574 3.664.574 2.314 0 4.1-.565 5.358-1.695 1.276-1.13 1.914-2.688 1.914-4.675 0-1.112-.265-2.014-.793-2.707-.529-.71-1.23-1.303-2.105-1.777-.857-.473-1.841-.874-2.953-1.203a174.168 174.168 0 01-3.39-1.038 38.348 38.348 0 01-3.39-1.313 11.456 11.456 0 01-2.98-1.968c-.856-.82-1.549-1.823-2.077-3.007-.529-1.203-.793-2.698-.793-4.484 0-1.421.273-2.797.82-4.128a10.643 10.643 0 012.433-3.526c1.075-1.04 2.397-1.868 3.964-2.488 1.568-.62 3.354-.93 5.359-.93 2.26 0 4.328.356 6.205 1.066 1.896.711 3.527 1.723 4.894 3.035l-1.558 3.062zm60.8-6.725L167.813 71h-5.768l-9.241-28.268c-.109-.31-.218-.647-.328-1.011a39.199 39.199 0 01-.273-1.176c-.091.42-.191.811-.301 1.176-.091.364-.191.701-.3 1.011L142.279 71h-5.768l-12.248-39.367h5.359c.546 0 1.002.136 1.366.41.383.255.638.61.766 1.066l7.381 25.233c.146.547.283 1.14.41 1.777.128.638.256 1.303.383 1.996.128-.693.264-1.358.41-1.996.164-.656.337-1.248.52-1.777l8.447-25.233c.128-.364.383-.702.766-1.012.382-.31.838-.464 1.367-.464h1.859c.565 0 1.02.146 1.366.437.347.273.611.62.793 1.039l8.421 25.233c.182.529.346 1.103.492 1.723.164.601.309 1.239.437 1.913.128-.674.246-1.312.355-1.913.128-.62.265-1.194.411-1.723l7.354-25.233c.109-.401.355-.747.738-1.039a2.306 2.306 0 011.394-.437h5.003zm36.866 19.984V67.2c-3.919 2.825-8.475 4.237-13.67 4.237-3.189 0-6.078-.492-8.666-1.476-2.57-1.002-4.766-2.387-6.588-4.155-1.823-1.786-3.226-3.91-4.21-6.37-.985-2.46-1.477-5.167-1.477-8.12 0-2.97.474-5.686 1.422-8.147.948-2.478 2.305-4.601 4.073-6.37 1.768-1.785 3.901-3.161 6.397-4.127 2.497-.985 5.304-1.477 8.421-1.477 1.585 0 3.052.128 4.401.383 1.367.237 2.634.574 3.8 1.012 1.167.437 2.242.965 3.226 1.585s1.887 1.312 2.707 2.078l-1.832 2.925c-.292.456-.665.738-1.121.848-.456.109-.948 0-1.476-.329-.529-.31-1.094-.637-1.695-.984a13.121 13.121 0 00-2.023-.956c-.766-.31-1.65-.556-2.652-.739-1.002-.2-2.187-.3-3.554-.3-2.078 0-3.955.346-5.632 1.038a11.82 11.82 0 00-4.265 2.926c-1.184 1.257-2.095 2.788-2.733 4.593-.638 1.804-.957 3.818-.957 6.041 0 2.351.337 4.456 1.011 6.316.675 1.84 1.632 3.408 2.871 4.702 1.239 1.275 2.734 2.25 4.483 2.925 1.768.674 3.737 1.011 5.905 1.011 1.623 0 3.062-.173 4.32-.519a19.607 19.607 0 003.745-1.449v-7.819h-5.495c-.419 0-.747-.109-.984-.328-.237-.237-.355-.537-.355-.902v-3.636h12.603z"
           ></path>
         </svg>
-      </Link>
+      </TransitionLink>
 
       <div>
         <button
@@ -42,34 +42,39 @@ const Header = () => {
           <span></span>
         </button>
         <nav
-          className={`fixed right-[5vw] bg-white text-lg lg:static lg:bg-transparent ${menuActive ? "top-24" : "-top-[100vh]"} flex w-[90vw] max-w-96 flex-col gap-3 rounded-lg border-2 px-6 py-6 transition-all lg:w-auto lg:max-w-fit lg:flex-row lg:gap-12 lg:border-0`}
+          className={`fixed right-[5vw] bg-white text-lg lg:static lg:bg-transparent ${menuActive ? "top-24" : "-top-[100vh]"} flex w-[90vw] max-w-96 flex-col gap-3 rounded-lg border-2 px-6 py-6 transition-all duration-500 lg:w-auto lg:max-w-fit lg:flex-row lg:gap-12 lg:border-0`}
         >
-          <Link
+          <TransitionLink
             href="/about"
-            className="font-semibold transition hover:text-primary relative nav--link"
+            className="nav--transition relative font-semibold transition hover:text-primary"
           >
             About
-          </Link>
-          <Link
+          </TransitionLink>
+          <TransitionLink
             href="/events"
-            className="font-semibold transition hover:text-primary relative nav--link"
+            className="nav--transition relative font-semibold transition hover:text-primary"
           >
             Events
-          </Link>
-          <Link
+          </TransitionLink>
+          <TransitionLink
             href="/resources"
-            className="font-semibold transition hover:text-primary relative nav--link"
+            className="nav--transition relative font-semibold transition hover:text-primary"
           >
             Resources
-          </Link>
-          {/* <Link href="/cv-repo" className="font-semibold hover:text-primary transition">CV Repo</Link> */}
-          <div className="lg:relative">
+          </TransitionLink>
+          <div
+            className="lg:relative"
+            onMouseEnter={() => {
+              setCvMenuActive(true);
+            }}
+            onMouseLeave={() => {
+              setCvMenuActive(false);
+            }}
+          >
             <button
-              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} flex items-center gap-2 transition relative nav--link`}
+              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
               onClick={() => {
-                cvMenuActive
-                  ? setCvMenuActive(false)
-                  : setCvMenuActive(true);
+                cvMenuActive ? setCvMenuActive(false) : setCvMenuActive(true);
               }}
             >
               Cv Repo
@@ -91,49 +96,57 @@ const Header = () => {
               </svg>
             </button>
             <div
-              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:absolute lg:-right-2 lg:top-10 lg:w-52 lg:gap-4 lg:shadow-lg ${cvMenuActive ? "mt-4 p-6 lg:border-2 lg:border-gray-200" : "max-h-0 overflow-hidden px-6"}`}
+              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all duration-500 lg:absolute lg:-right-2 lg:top-12 lg:w-52 lg:gap-4 lg:py-6 lg:shadow-lg ${cvMenuActive ? "mt-4 p-6 lg:mt-0 lg:translate-y-2 lg:border-2 lg:border-gray-200 lg:p-0 lg:px-6" : "max-h-0 translate-y-8 overflow-hidden px-6 lg:invisible lg:max-h-fit lg:overflow-auto lg:opacity-0"}`}
             >
-              <Link
+              <TransitionLink
                 href="/cv-repo/software"
                 className="font-semibold transition hover:text-primary"
               >
                 Software
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/cv-repo/consultant"
                 className="font-semibold transition hover:text-primary"
               >
                 Consultant
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/cv-repo/data"
                 className="font-semibold transition hover:text-primary"
               >
                 Data
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/cv-repo/product"
                 className="font-semibold transition hover:text-primary"
               >
                 Product
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/cv-repo/quant"
                 className="font-semibold transition hover:text-primary"
               >
                 Quant
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/cv-repo/finance"
                 className="font-semibold transition hover:text-primary"
               >
                 Finance
-              </Link>
+              </TransitionLink>
             </div>
           </div>
-          <div className="lg:relative">
+          <div
+            className="lg:relative"
+            onMouseEnter={() => {
+              setBlogMenuActive(true);
+            }}
+            onMouseLeave={() => {
+              setBlogMenuActive(false);
+            }}
+          >
             <button
-              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} flex items-center gap-2 transition relative nav--link`}
+              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
               onClick={() => {
                 blogMenuActive
                   ? setBlogMenuActive(false)
@@ -159,32 +172,32 @@ const Header = () => {
               </svg>
             </button>
             <div
-              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all lg:absolute lg:-right-2 lg:top-10 lg:w-52 lg:gap-4 lg:shadow-lg ${blogMenuActive ? "mt-4 p-6 lg:border-2 lg:border-gray-200" : "max-h-0 overflow-hidden px-6"}`}
+              className={`flex flex-col gap-3 rounded-lg bg-gray-50 transition-all duration-500 lg:absolute lg:-right-2 lg:top-12 lg:w-52 lg:gap-4 lg:py-6 lg:shadow-lg ${blogMenuActive ? "mt-4 p-6 lg:mt-0 lg:translate-y-2 lg:border-2 lg:border-gray-200 lg:p-0 lg:px-6" : "max-h-0 translate-y-8 overflow-hidden px-6 lg:invisible lg:max-h-fit lg:overflow-auto lg:opacity-0"}`}
             >
-              <Link
+              <TransitionLink
                 href="/blogs/internship"
                 className="font-semibold transition hover:text-primary"
               >
                 Internship Blogs
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/blogs/placement"
                 className="font-semibold transition hover:text-primary"
               >
                 Placement Blogs
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/blogs/adieu-kgp"
                 className="font-semibold transition hover:text-primary"
               >
                 Adieu Kgp
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/blogs/know-your-department"
                 className="font-semibold transition hover:text-primary"
               >
                 Know Your Department
-              </Link>
+              </TransitionLink>
             </div>
           </div>
         </nav>

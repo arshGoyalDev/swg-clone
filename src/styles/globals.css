@@ -12,9 +12,23 @@ body.overflow--hidden {
   @apply overflow-hidden;
 }
 
+body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
 /* header */
 
 /* ham-burger btn */
+
 
 .ham-btn {
   @apply relative grid h-[25px] w-7 place-content-center;
@@ -57,12 +71,12 @@ body.overflow--hidden {
 
 /* nav bar */
 
-.nav--link::before {
+.nav--transition::before {
   content: "";
   @apply absolute -bottom-[2px] h-[2px] w-full origin-left scale-x-0 rounded-xl bg-primary bg-opacity-80 transition-all;
 }
 
-.nav--link:hover::before {
+.nav--transition:hover::before {
   @apply scale-x-100;
 }
 

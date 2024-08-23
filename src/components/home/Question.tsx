@@ -60,7 +60,7 @@ const Question = ({
       </div>
 
       <div
-        className={`${isActive ? "p-5" : "max-h-0 overflow-hidden px-5"} transition-all ease-out`}
+        className={`${isActive ? "p-5" : "max-h-0 overflow-hidden px-5"} transition-all duration-500 ease-out`}
       >
         <div className="accordion-item-body-content">{answer}</div>
       </div>
