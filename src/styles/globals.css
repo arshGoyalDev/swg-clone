@@ -67,9 +67,13 @@ body {
 
 /* nav bar */
 
+.nav--transition:hover {
+  @apply font-bold transition-all
+}
+
 .nav--transition::before {
   content: "";
-  @apply absolute -bottom-[2px] h-[2px] w-full origin-left scale-x-0 rounded-xl bg-primary bg-opacity-80 transition-all;
+  @apply absolute -bottom-1 h-1 w-full origin-left scale-x-0 rounded-xl bg-primary bg-opacity-80 transition-all duration-300;
 }
 
 .nav--transition:hover::before {

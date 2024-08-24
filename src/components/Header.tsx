@@ -46,19 +46,19 @@ const Header = () => {
         >
           <TransitionLink
             href="/about"
-            className="nav--transition relative font-semibold transition hover:text-primary"
+            className="nav--transition relative font-medium transition hover:text-primary text-lg"
           >
             About
           </TransitionLink>
           <TransitionLink
             href="/events"
-            className="nav--transition relative font-semibold transition hover:text-primary"
+            className="nav--transition relative font-medium transition hover:text-primary text-lg"
           >
             Events
           </TransitionLink>
           <TransitionLink
             href="/resources"
-            className="nav--transition relative font-semibold transition hover:text-primary"
+            className="nav--transition relative font-medium transition hover:text-primary text-lg"
           >
             Resources
           </TransitionLink>
@@ -72,7 +72,7 @@ const Header = () => {
             }}
           >
             <button
-              className={`font-semibold hover:text-primary ${cvMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
+              className={`font-medium hover:text-primary text-lg ${cvMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
               onClick={() => {
                 cvMenuActive ? setCvMenuActive(false) : setCvMenuActive(true);
               }}
@@ -100,37 +100,37 @@ const Header = () => {
             >
               <TransitionLink
                 href="/cv-repo/software"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Software
               </TransitionLink>
               <TransitionLink
                 href="/cv-repo/consultant"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Consultant
               </TransitionLink>
               <TransitionLink
                 href="/cv-repo/data"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Data
               </TransitionLink>
               <TransitionLink
                 href="/cv-repo/product"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Product
               </TransitionLink>
               <TransitionLink
                 href="/cv-repo/quant"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Quant
               </TransitionLink>
               <TransitionLink
                 href="/cv-repo/finance"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Finance
               </TransitionLink>
@@ -146,7 +146,7 @@ const Header = () => {
             }}
           >
             <button
-              className={`font-semibold hover:text-primary ${blogMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
+              className={`font-medium hover:text-primary text-lg ${blogMenuActive && "text-primary"} nav--transition relative flex items-center gap-2 transition`}
               onClick={() => {
                 blogMenuActive
                   ? setBlogMenuActive(false)
@@ -176,25 +176,25 @@ const Header = () => {
             >
               <TransitionLink
                 href="/blogs/internship"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Internship Blogs
               </TransitionLink>
               <TransitionLink
                 href="/blogs/placement"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Placement Blogs
               </TransitionLink>
               <TransitionLink
                 href="/blogs/adieu-kgp"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Adieu Kgp
               </TransitionLink>
               <TransitionLink
                 href="/blogs/know-your-department"
-                className="font-semibold transition hover:text-primary"
+                className="font-medium transition hover:text-primary"
               >
                 Know Your Department
               </TransitionLink>
