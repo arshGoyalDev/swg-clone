@@ -27,25 +27,25 @@ body {
 /* ham-burger btn */
 
 .ham-btn {
-  @apply relative grid h-[25px] w-7 place-content-center;
+  @apply relative grid h-[20px] w-8 place-content-center;
 }
 
 .ham-btn span {
-  @apply h-[3px] w-7 rounded-md bg-black transition-all;
+  @apply h-[3px] w-8 rounded-md bg-black transition-all duration-300;
 }
 
 .ham-btn::before,
 .ham-btn::after {
   content: "";
-  @apply absolute h-[3px] w-7 rounded-md bg-black transition-all;
+  @apply absolute h-[3px] rounded-md bg-black transition-all duration-300;
 }
 
 .ham-btn::before {
-  @apply left-0 top-0;
+  @apply left-0 top-0 w-8;
 }
 
 .ham-btn::after {
-  @apply bottom-0 left-0;
+  @apply bottom-0 right-0 w-4;
 }
 
 .ham-btn.active span {
@@ -53,7 +53,7 @@ body {
 }
 
 .ham-btn.active::before {
-  @apply top-[14px] w-8 rotate-45;
+  @apply top-2 w-8 rotate-45;
 }
 
 .ham-btn.active::after {
@@ -147,4 +147,9 @@ input[type="radio"]:checked {
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translate3d(400px, 0, 0);
   }
+}
+
+
+main {
+  @apply mt-32
 }

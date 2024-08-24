@@ -28,8 +28,8 @@ const FeaturedBlogs = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: false, amount: 0.25 }}
-    className="grid place-content-center gap-20 bg-primary bg-opacity-20 px-4 py-20 lg:px-12 xl:px-32">
-      <h2 className="text-6xl font-semibold text-secondary">
+    className="grid place-content-center  gap-20 bg-primary bg-opacity-20 px-4 py-20 lg:px-12 xl:px-32">
+      <h2 className="text-6xl font-semibold text-secondary text-center">
         Student Welfare Group
       </h2>
       <div className="flex flex-col items-center">
