@@ -241,69 +241,63 @@ const eventsData: {
     id: 3,
   },
   {
-    imageUrl: "https://swgiitkgp.org/assets/EventI/FORESIGHT.png",
-    content:
-      "Session to resolve all doubts regarding the Off-Campus internship and placement opportunities and how to prepare for them. Click here to watch the session.",
-    id: 4,
-  },
-  {
     imageUrl: "https://swgiitkgp.org/assets/EventI/PDS.png",
     content:
       "Sessions where PDS mentors will be clearing concepts and doubts, and will provide practice as well. Click here to join MS Teams.",
-    id: 5,
+    id: 4,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/EXAM.png",
     content:
       "The answer to all your doubts related to exam prep, from the study material one should use to the difficulty of the previous year papers, everything is here! Watch recording here.",
-    id: 6,
+    id: 5,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/COS.png",
     content:
       "Session to resolve all doubts regarding the different career opportunities and how to prepare for them. Click here to watch the session.",
-    id: 7,
+    id: 6,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/DEPCT.png",
     content:
       "All one can need for DepC (except for the report of working hard) is here! Watch the recording here.",
-    id: 8,
+    id: 7,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/RGW.png",
     content:
       "Initiative to guide students and provide them a roadmap to kickstart their journey in R&D. Click here to watch recording.",
-    id: 9,
+    id: 8,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/CT.png",
     content: "Initiative for the freshers to let them know the campus better.",
-    id: 10,
+    id: 9,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/UPSCT.png",
     content:
       "Toughest exams simplified by the civil servants who were once aspirants. Click here to watch the session.",
-    id: 11,
+    id: 10,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/AKGP.png",
     content:
       "Initiative to preserve memories and experiences of graduating seniors to create a unique treasured masterpiece. Click here to read the blogs",
-    id: 12,
+    id: 11,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/AOST.png",
     content:
       "Sessions to resolve queries about Breadth, Minors, Micro-courses and much more. Click here to watch the session",
-    id: 13,
+    id: 12,
   },
   {
     imageUrl: "https://swgiitkgp.org/assets/EventI/APP.png",
     content:
       "One stop solution for all academic, non academic and cdc doubts!!",
-    id: 14,
+    id: 13,
   },
 ];
 
