@@ -7,29 +7,24 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { fadeIn } from "~/utils/animations";
+import GroupOne from "./hero/GroupOne";
+import GroupTwo from "./hero/GroupTwo";
+import GroupThree from "./hero/GroupThree";
 
 const HeroSection = () => {
   const [currentGroup, setCurrentGroup] = useState(0);
-  const [animationOrder, setAnimationOrder] = useState("up");
-  // const [groupChange, setGroupChange] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      if (animationOrder === "up") {
-        if (currentGroup !== 2) {
-          setCurrentGroup(currentGroup + 1);
-        } else {
-          setAnimationOrder("down");
-        }
+      if (currentGroup === 0) {
+        setCurrentGroup(1);
+      } else if (currentGroup === 1) {
+        setCurrentGroup(2);
       } else {
-        if (currentGroup !== 0) {
-          setCurrentGroup(currentGroup - 1);
-        } else {
-          setAnimationOrder("up");
-        }
+        setCurrentGroup(0);
       }
-    }, 3500);
-  }, [currentGroup, animationOrder]);
+    }, 4000);
+  }, [currentGroup]);
 
   const data: {
     name: string;
@@ -69,7 +64,7 @@ const HeroSection = () => {
             Right there with you in your
           </span>
           <span
-            className={`animate w-[236px] text-4xl font-semibold lg:w-fit lg:text-6xl`}
+            className={`w-[236px] text-4xl font-semibold lg:w-fit lg:text-6xl`}
           >
             {currentGroup === 0 && (
               <span className="text-[#db9336]">{data[0]?.title}</span>
@@ -85,122 +80,21 @@ const HeroSection = () => {
       </div>
 
       <div className="mt-32 grid w-full place-content-center lg:mt-52">
-        <div
-          className="relative grid gap-6"
-        >
-          <Image
-            src={`/images/${data[currentGroup]?.name}/1.png`}
-            alt="1"
-            width={236}
-            height={350}
-            className="rounded-xl"
-          />
-          <Image
-            src={`/images/${data[currentGroup]?.name}/2.png`}
-            alt="1"
-            width={236}
-            height={350}
-            className="rounded-xl"
-          />
-
-          <div className="absolute left-[-266px] top-[-160px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/3.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/4.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-          <div className="absolute right-[-266px] top-[-160px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/5.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/6.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-          <div className="absolute left-[-530px] top-[-320px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/7.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/8.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-          <div className="absolute right-[-530px] top-[-320px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/9.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/4.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-
-          <div className="absolute left-[-790px] top-[-480px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/3.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/10.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-          <div className="absolute right-[-790px] top-[-480px] grid gap-6">
-            <Image
-              src={`/images/${data[currentGroup]?.name}/2.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-            <Image
-              src={`/images/${data[currentGroup]?.name}/8.png`}
-              alt="1"
-              width={236}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
-        </div>
+        {currentGroup === 0 && (
+          <>
+            <GroupOne />
+          </>
+        )}
+        {currentGroup === 1 && (
+          <>
+            <GroupTwo />
+          </>
+        )}
+        {currentGroup === 2 && (
+          <>
+            <GroupThree />
+          </>
+        )}
       </div>
     </motion.section>
   );

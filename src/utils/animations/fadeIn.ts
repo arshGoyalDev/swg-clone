@@ -1,6 +1,6 @@
 import { easeInOut } from "framer-motion/dom";
 
-const fadeIn = (direction: string) => {
+const fadeIn = (direction: string, delay = 0) => {
   return {
     hidden: {
       y: direction === "up" ? 50 : direction === "down" ? -50 : 0,
@@ -13,6 +13,7 @@ const fadeIn = (direction: string) => {
       opacity: 1,
       transition: {
         type: "tween",
+        delay: delay,
         duration: 1,
         ease: easeInOut,
       },

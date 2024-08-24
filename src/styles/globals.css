@@ -19,7 +19,7 @@ body {
 }
 
 .page-transition {
-  @apply opacity-0 bg-black translate-y-10 blur-xl;
+  @apply translate-y-10 bg-black opacity-0 blur-xl;
 }
 
 /* header */
@@ -68,7 +68,7 @@ body {
 /* nav bar */
 
 .nav--transition:hover {
-  @apply font-bold transition-all
+  @apply font-bold transition-all;
 }
 
 .nav--transition::before {
