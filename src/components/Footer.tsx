@@ -1,4 +1,7 @@
+// import TransitionLink from "next/TransitionLink";
 import Link from "next/link";
+
+import { TransitionLink } from "./animations";
 
 const Footer = () => {
   return (
@@ -11,21 +14,21 @@ const Footer = () => {
       </div>
 
       <div className="flex flex-col items-center gap-4">
-        <h3 className="text-xl font-semibold">Quick Links</h3>
+        <h3 className="text-xl font-semibold">Quick TransitionLinks</h3>
         <div className="flex flex-col items-center gap-3 text-gray-200">
-          <Link href="/about" className="hover:text-primary transition">About Us</Link>
-          <Link href="/event" className="hover:text-primary transition">Events</Link>
-          <Link href="/" className="hover:text-primary transition">SWG App</Link>
-          <Link href="/team" className="hover:text-primary transition">Our Team</Link>
+          <TransitionLink href="/about" className="hover:text-primary transition">About Us</TransitionLink>
+          <TransitionLink href="/events" className="hover:text-primary transition">Events</TransitionLink>
+          <TransitionLink href="/" className="hover:text-primary transition">SWG App</TransitionLink>
+          <TransitionLink href="/about" className="hover:text-primary transition">Our Team</TransitionLink>
         </div>
       </div>
       <div className="flex flex-col items-center gap-4">
         <h3 className="text-2xl">Resources</h3>
         <div className="flex flex-col items-center gap-3 text-gray-200">
-          <Link href="/resources" className="hover:text-primary transition">Study Material</Link>
-          <Link href="/" className="hover:text-primary transition">Fundae Docs</Link>
-          <Link href="/blogs/internship" className="hover:text-primary transition">Internship Blogs</Link>
-          <Link href="/blogs/placement" className="hover:text-primary transition">Placement Blogs</Link>
+          <TransitionLink href="/resources" className="hover:text-primary transition">Study Material</TransitionLink>
+          <TransitionLink href="/resources" className="hover:text-primary transition">Fundae Docs</TransitionLink>
+          <TransitionLink href="/blogs/internship" className="hover:text-primary transition">Internship Blogs</TransitionLink>
+          <TransitionLink href="/blogs/placement" className="hover:text-primary transition">Placement Blogs</TransitionLink>
         </div>
       </div>
 

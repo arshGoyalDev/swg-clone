@@ -10,7 +10,7 @@ const Header = () => {
   const [cvMenuActive, setCvMenuActive] = useState(false);
 
   return (
-    <header className="fixed rounded-xl top-4 lg:top-6 left-4 right-4 lg:left-12 lg:right-12 xl:left-20 xl:right-20 2xl:left-80 2xl:right-80 border-4 border-white z-20 flex items-center justify-between bg-white bg-opacity-20 px-4 backdrop-blur-3xl lg:px-12 lg:py-1">
+    <header className="sticky w-[90vw] xl:w-[70vw] 2xl:w-[65vw] mx-auto rounded-xl top-4 z-20 flex items-center justify-between bg-gray-300 bg-opacity-20 px-4 backdrop-blur-3xl lg:px-12 lg:py-1">
       <TransitionLink href="/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const Header = () => {
           <span></span>
         </button>
         <nav
-          className={`fixed right-0 bg-white text-lg lg:static lg:bg-transparent ${menuActive ? "top-28" : "-top-[100vh]"} flex w-[90vw] max-w-96 flex-col gap-3 rounded-lg border-2 px-6 py-6 transition-all duration-500 lg:w-auto lg:max-w-fit lg:flex-row lg:gap-12 lg:border-0`}
+          className={`fixed right-0 bg-white text-lg lg:static lg:bg-transparent ${menuActive ? "top-28" : "-top-[100vh]"} flex w-[90vw] max-w-96 flex-col gap-3 rounded-xl border-2 px-6 py-6 transition-all duration-500 lg:w-auto lg:max-w-fit lg:flex-row lg:gap-12 lg:border-0`}
         >
           <TransitionLink
             href="/about"

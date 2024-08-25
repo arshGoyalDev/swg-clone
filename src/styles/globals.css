@@ -15,11 +15,11 @@ body.overflow--hidden {
 body {
   transition-property: opacity, transform, filter, background;
   transition-timing-function: ease-in-out;
-  transition-duration: 500ms;
+  transition-duration: 0.5s;
 }
 
 .page-transition {
-  @apply translate-y-10 bg-black opacity-0 blur-xl;
+  @apply translate-y-10 translate-x-10 bg-zinc-800 opacity-0 blur-xl;
 }
 
 /* header */

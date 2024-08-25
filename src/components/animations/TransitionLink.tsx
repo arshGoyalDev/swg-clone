@@ -28,11 +28,11 @@ const TransitionLink = ({ children, href, className }: TransitionLinkProps) => {
 
     body?.classList.add("page-transition");
 
-    await sleep(600);
+    await sleep(700);
 
     router.push(href);
 
-    await sleep(800);
+    await sleep(900);
 
     body?.classList.remove("page-transition");
   };
