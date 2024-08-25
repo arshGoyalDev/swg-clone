@@ -18,8 +18,10 @@ body {
   transition-duration: 0.5s;
 }
 
+/* page transition */
+
 .page-transition {
-  @apply translate-y-10 translate-x-10 bg-black opacity-0 blur-xl;
+  @apply translate-y-10 bg-black opacity-0 blur-xl;
 }
 
 /* header */
@@ -147,9 +149,4 @@ input[type="radio"]:checked {
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translate3d(400px, 0, 0);
   }
-}
-
-
-main {
-  @apply mt-32
 }
